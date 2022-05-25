@@ -1,42 +1,36 @@
 public class Main {
     public static void main(String[] args) {
 
-        String [] bookArray = new String[4];
 
-        Author author1 = new Author("Лев", "Толстой");
-        Author author2 = new Author("Александр", "Пушкин");
-        Author author3 = new Author("Александр", "Дюма");
-        Book book1 = new Book("Война и мир", author1, 1999);
-        Book book2 = new Book("Евгений Онегин", author2, 2001);
-        Book book3 = new Book("Евгений Осин", author3, 2008);
+        Library author1 = new Library ();
+        Library author2 = new Library ();
+        Library author3 = new Library ();
+        author1.author("Лев", "Толстой") ;
+        author2.author("Александр", "Дюма") ;
+        author3.author("Евгений", "Осин") ;
+
+        Library year1 = new Library ();
+        Library year2 = new Library ();
+        Library year3 = new Library ();
+        year1.publishyngYear(1990) ;
+        year2.publishyngYear(1995) ;
+        year3.publishyngYear(2015) ;
+
+        Library book1 = new Library ();
+        Library book2 = new Library ();
+        Library book3 = new Library ();
+        book1.book("Война и мир", author1, year1) ;
+        book2.book ("Снегурочка", author2, year2) ;
+        book3.book("Солнце", author3, year3) ;
+
+        String [] bookArray = new String[3];
+
         bookArray [0] = String.valueOf(book1) ;
         bookArray [1] = String.valueOf(book2) ;
+        bookArray [2] = String.valueOf(book3) ;
 
-//        addBook(bookArray, String.valueOf(book1));
-//        addBook(bookArray, String.valueOf(book2));
-
-//        System.out.println("bookArray[1] = " + bookArray[1]);
-        addBook(bookArray, String.valueOf(book3));
-    }
-
-    public static void addBook (String [] array, String book) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] !=null) {
-                System.out.println("array [i] = " + array[i]);
-//                array[i] = book ;
-//                break;
-            }  else
-            {array [i] = book ;
-            System.out.println("array[i] = " + array[i]);
-            break;}
-
-        }
+        System.out.println("bookArray.length = " + bookArray.length);
+    }}
 
 
-//            else System.out.println("Добавление книги невозможно!");
-        }
-//        System.out.println("book1 = " + book1);
 
-//        System.out.println("author1 = " + author1);
-
-    }
